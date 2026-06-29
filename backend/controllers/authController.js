@@ -81,4 +81,34 @@ const verifyToken = async (req, res) => {
   res.status(200).json({ valid: true, admin: req.admin });
 };
 
-module.exports = { loginAdmin, changePassword, verifyToken };
+// @route   GET /api/auth/setup-admin?key=SETUP_SECRET
+// @access  Public, but protected by a secret query key (SETUP_SECRET env var)
+const setupAdmin = async (req, res) => {
+  try {
+    const providedKey = req.query.key;
+
+    if (!process.env.SETUP_SECRET || providedKey !== process.env.SETUP_SECRET) {
+      return res.status(403).json({ message: 'Forbidden: invalid or missing setup key.' });
+    }
+
+    const existingAdmin = await Admin.findOne({ username: process.env.ADMIN_DEFAULT_USERNAME });
+    if (existingAdmin) {
+      return res.status(200).json({
+        message: `Admin account "${process.env.ADMIN_DEFAULT_USERNAME}" already exists. No action taken.`,
+      });
+    }
+
+    const admin = await Admin.create({
+      username: process.env.ADMIN_DEFAULT_USERNAME,
+      password: process.env.ADMIN_DEFAULT_PASSWORD,
+    });
+
+    res.status(201).json({
+      message: `Admin account "${admin.username}" created successfully. Please log in and change the password immediately.`,
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error while setting up admin.', error: error.message });
+  }
+};
+
+module.exports = { loginAdmin, changePassword, verifyToken, setupAdmin };
