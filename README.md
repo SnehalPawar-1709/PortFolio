@@ -1,110 +1,153 @@
-# Dynamic Portfolio CMS — Project 1 ("Slate & Amber" theme)
+# My Portfolio Website — Deployment Info
 
-A fully dynamic MERN stack portfolio website with a hidden admin panel.
-All content is managed through the admin dashboard — nothing is hardcoded.
+## Live URLs
+
+| | URL |
+|---|---|
+| **Portfolio Website** | https://port-folio-tawny-eight-10.vercel.app |
+| **Backend API** | https://portfolio-1-q3lv.onrender.com |
+
+---
 
 ## Tech Stack
-- React.js (frontend) + React Router + Axios + Bootstrap
-- Node.js + Express.js (backend)
-- MongoDB + Mongoose
-- JWT Authentication + bcrypt password hashing
+- **Frontend:** React.js + Bootstrap → deployed on **Vercel**
+- **Backend:** Node.js + Express.js → deployed on **Render**
+- **Database:** MongoDB Atlas (cloud)
+- **Auth:** JWT + bcrypt password hashing
 
-## Folder Structure
-```
-portfolio-1/
-├── backend/
-│   ├── config/         (MongoDB connection)
-│   ├── controllers/    (business logic for each resource)
-│   ├── middleware/     (JWT auth + error handling)
-│   ├── models/         (Mongoose schemas)
-│   ├── routes/         (Express routes)
-│   ├── utils/          (admin seed script)
-│   ├── .env.example
-│   └── server.js
-└── frontend/
-    └── src/
-        ├── components/public/   (portfolio sections)
-        ├── components/admin/    (admin dashboard pages)
-        ├── context/             (auth state)
-        └── utils/                (API client, hidden access hook)
-```
+---
 
-## Setup Instructions
+## Accessing the Admin Panel
 
-### Prerequisites
-- Node.js (v18+ recommended) installed
-- MongoDB installed locally OR a free MongoDB Atlas cluster
+The admin panel is **hidden** — no visible login link exists anywhere on the portfolio.
 
-### 1. Backend Setup
-```bash
-cd backend
-npm install
-```
-
-Edit `.env` (copy from `.env.example` if needed) and set your MongoDB connection string:
-```
-MONGO_URI=mongodb://127.0.0.1:27017/portfolio_db_1
-```
-If using MongoDB Atlas, paste your Atlas connection string instead.
-
-Seed the default admin account (run once):
-```bash
-npm run seed
-```
-This creates an admin with:
-- Username: `admin`
-- Password: `Admin@123`
-
-**Change this password immediately after your first login**, using Account Settings in the admin dashboard.
-
-Start the backend:
-```bash
-npm run dev
-```
-Backend runs on **http://localhost:5001**
-
-### 2. Frontend Setup
-Open a second terminal:
-```bash
-cd frontend
-npm install
-npm start
-```
-Frontend runs on **http://localhost:3000**
-
-### 3. Accessing the Portfolio
-Visit **http://localhost:3000** — it will show empty sections until you add content via the admin panel.
-
-### 4. Accessing the Hidden Admin Panel
-There is no visible "Admin Login" link anywhere on the site. Use ONE of these two secret methods:
+### Secret Access Methods (only you know these):
 
 **Method 1 — Keyboard shortcut (desktop):**
 Press `Ctrl + Shift + A` anywhere on the portfolio page.
 
-**Method 2 — Hidden multi-click (works on any device):**
-Click the copyright text in the footer (e.g. "© 2026 Portfolio. All rights reserved.") **5 times within 2 seconds**.
+**Method 2 — Hidden click (mobile/any device):**
+Click the **footer copyright text** (e.g. "© 2026 Portfolio. All rights reserved.") **5 times quickly** (within 2 seconds).
 
-Both methods take you to: `http://localhost:3000/portal-x9k2-secure-access`
+Both methods take you to the hidden admin login page.
 
-Log in with the admin credentials above.
+### Admin Login Credentials:
+- **Username:** (the `ADMIN_DEFAULT_USERNAME` you set on Render)
+- **Password:** (the `ADMIN_DEFAULT_PASSWORD` you set on Render)
 
-### 5. Using the Admin Dashboard
-Once logged in, you can manage:
-- Profile & Hero (name, designation, intro, resume link, about description)
-- Skills (add/edit/delete)
-- Projects (add/edit/delete — GitHub/demo links optional)
-- Experience (add/edit/delete)
-- Certificates (add/edit/delete — verification link optional)
-- Achievements (add/edit/delete)
-- Education (add/edit/delete)
-- Contact Information (edit)
-- Account Settings (change password)
+> ⚠️ Keep these credentials private. Change the password from Account Settings inside the dashboard after logging in.
 
-Any content you add appears immediately on the public portfolio. Anything you delete disappears immediately. No code changes are ever required.
+---
 
-## Important Security Note
-Before deploying this publicly:
-1. Change the default admin password immediately.
-2. Change `JWT_SECRET` in `.env` to a long, random string.
-3. Consider changing the secret admin URL path (`/portal-x9k2-secure-access`) in `App.js` and the hook file to something only you know.
-4. Use HTTPS in production.
+## How to Manage Your Portfolio Content
+
+1. Visit https://port-folio-tawny-eight-10.vercel.app
+2. Use `Ctrl+Shift+A` (or 5x click footer) to access admin login
+3. Log in with your credentials
+4. From the admin dashboard, you can manage:
+   - **Profile & Hero** — name, designation, intro, resume link
+   - **About** — your description
+   - **Skills** — add/edit/delete skills
+   - **Projects** — add/edit/delete with GitHub & live demo links
+   - **Experience** — company, role, duration, description
+   - **Certificates** — with optional verification links
+   - **Achievements** — title and description
+   - **Education** — degree, college, year
+   - **Contact Info** — email, phone, LinkedIn, GitHub, other links
+   - **Account Settings** — change your admin password
+
+All changes appear **instantly** on the live portfolio — no code changes needed, ever.
+
+---
+
+## Hosting Details
+
+### Frontend (Vercel)
+- **Platform:** https://vercel.com
+- **Project:** port-folio (connected to GitHub repo `PortFolio`, `frontend` subfolder)
+- **Environment Variables:**
+  ```
+  REACT_APP_API_URL=https://portfolio-1-q3lv.onrender.com/api
+  ```
+
+### Backend (Render)
+- **Platform:** https://render.com
+- **Service:** portfolio-1-q3lv (connected to GitHub repo `PortFolio`, `backend` subfolder)
+- **Environment Variables on Render:**
+  ```
+  PORT=10000 (set automatically by Render)
+  MONGO_URI=<your Atlas connection string>
+  JWT_SECRET=<your long random secret>
+  JWT_EXPIRES_IN=7d
+  ADMIN_DEFAULT_USERNAME=<your admin username>
+  ADMIN_DEFAULT_PASSWORD=<your admin password>
+  CLIENT_URL=https://port-folio-tawny-eight-10.vercel.app
+  ```
+
+### Database (MongoDB Atlas)
+- **Platform:** https://cloud.mongodb.com
+- **Database name:** portfolio_db_1
+- **Connection:** via MONGO_URI environment variable on Render
+
+---
+
+## Important Notes
+
+- **Render free tier sleeps** after 15 minutes of inactivity. The first request after idle time takes ~30-50 seconds to wake up — this is normal, not a bug.
+- **Never commit your `.env` file** to GitHub — it's already in `.gitignore`.
+- **To update content:** just log into the admin panel — no code changes or redeployments needed.
+- **To update code:** push to GitHub → Render and Vercel auto-redeploy automatically.
+
+---
+
+## Local Development (running on your computer)
+
+### Backend:
+```powershell
+cd portfolio-1/backend
+npm install
+npm run dev
+```
+Runs on http://localhost:5000
+
+### Frontend:
+```powershell
+cd portfolio-1/frontend
+npm install
+npm start
+```
+Runs on http://localhost:3000
+
+Make sure your local `.env` file has:
+```
+MONGO_URI=mongodb://127.0.0.1:27017/portfolio_db_1
+JWT_SECRET=any_local_secret_string
+```
+
+---
+
+## Removing the Debug Endpoint (Important Security Step)
+
+A temporary `debug-login` endpoint was added during deployment troubleshooting.
+Now that login is working, remove it for security:
+
+1. Go to GitHub → `backend/controllers/authController.js`
+2. Delete the entire `debugLogin` function (the last function before `module.exports`)
+3. Update `module.exports` at the bottom to:
+   ```javascript
+   module.exports = { loginAdmin, changePassword, verifyToken, setupAdmin };
+   ```
+4. Go to GitHub → `backend/routes/authRoutes.js`
+5. Remove this line:
+   ```javascript
+   router.get('/debug-login', debugLogin);
+   ```
+6. Update the require line to:
+   ```javascript
+   const { loginAdmin, changePassword, verifyToken, setupAdmin } = require('../controllers/authController');
+   ```
+7. Commit both files → Render auto-redeploys
+
+---
+
+*Portfolio built with MERN Stack — React.js, Node.js, Express.js, MongoDB*
