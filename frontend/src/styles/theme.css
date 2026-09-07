@@ -1,30 +1,23 @@
-/* ============================================
-   PROJECT 1 THEME: "SLATE & AMBER"
-   A confident editorial-professional palette:
-   deep slate-navy for structure, warm amber
-   as the single accent, warm paper background.
-   ============================================ */
-
 :root {
-  --color-bg: #FAF8F4;            /* warm paper background */
-  --color-surface: #FFFFFF;       /* card surfaces */
-  --color-slate-900: #1B2430;     /* deep slate-navy (headers, nav) */
-  --color-slate-700: #34404F;     /* secondary text on dark */
-  --color-slate-500: #5C6B7A;     /* muted body text */
-  --color-amber: #C97A2B;         /* primary accent (warm amber/ochre) */
-  --color-amber-dark: #A8631F;    /* accent hover */
-  --color-amber-light: #F2DCC0;   /* accent tint backgrounds */
-  --color-border: #E4DFD5;        /* hairline borders */
-  --color-success: #3D7A56;
+  --color-bg: #F9F7FF;
+  --color-surface: #FFFFFF;
+  --color-slate-900: #2D1B69;
+  --color-slate-700: #4C3B8A;
+  --color-slate-500: #6B5EA8;
+  --color-amber: #7C3AED;
+  --color-amber-dark: #5B21B6;
+  --color-amber-light: #EDE9FE;
+  --color-border: #DDD5F5;
+  --color-success: #2E7D5B;
   --color-danger: #B0413E;
 
-  --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-display: 'Poppins', 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --radius-sm: 4px;
   --radius-md: 8px;
-  --shadow-card: 0 1px 3px rgba(27, 36, 48, 0.06), 0 1px 2px rgba(27, 36, 48, 0.04);
-  --shadow-elevated: 0 4px 16px rgba(27, 36, 48, 0.10);
+  --shadow-card: 0 1px 3px rgba(45, 27, 105, 0.06), 0 1px 2px rgba(45, 27, 105, 0.04);
+  --shadow-elevated: 0 4px 16px rgba(45, 27, 105, 0.12);
 }
 
 * {
@@ -42,8 +35,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--color-slate-900);
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -66,8 +60,8 @@ a:hover {
 .section-label {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-amber);
   margin-bottom: 0.6rem;
@@ -96,7 +90,7 @@ a:hover {
   background-color: var(--color-amber);
   border: 1px solid var(--color-amber);
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.55rem 1.4rem;
   border-radius: var(--radius-sm);
   transition: background-color 0.15s ease, transform 0.1s ease;
@@ -110,9 +104,9 @@ a:hover {
 
 .btn-outline-slate {
   background-color: transparent;
-  border: 1px solid var(--color-slate-900);
+  border: 1.5px solid var(--color-slate-900);
   color: var(--color-slate-900);
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.55rem 1.4rem;
   border-radius: var(--radius-sm);
   transition: all 0.15s ease;
@@ -143,7 +137,6 @@ a:hover {
   font-style: italic;
 }
 
-/* Scrollbar accent (subtle, non-intrusive) */
 ::selection {
   background-color: var(--color-amber-light);
 }
