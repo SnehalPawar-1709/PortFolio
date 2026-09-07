@@ -28,7 +28,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   background-color: var(--color-bg);
-  color: var(--color-slate-700);
+  color: var(--color-slate-900);
   -webkit-font-smoothing: antialiased;
 }
 
