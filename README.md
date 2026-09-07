@@ -147,7 +147,8 @@ Now that login is working, remove it for security:
    const { loginAdmin, changePassword, verifyToken, setupAdmin } = require('../controllers/authController');
    ```
 7. Commit both files → Render auto-redeploys
-
+## Live Demo
+🔗 [View Portfolio](https://port-folio-tawny-eight-10.vercel.app)
 ---
 
 *Portfolio built with MERN Stack — React.js, Node.js, Express.js, MongoDB*
