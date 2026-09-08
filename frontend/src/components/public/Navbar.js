@@ -17,15 +17,15 @@ const Navbar = ({ name }) => {
   return (
     <nav
       className="navbar navbar-expand-lg fixed-top"
-      style={{ backgroundColor: 'var(--color-slate-900)', padding: '0.9rem 0' }}
+      style={{ backgroundColor: '#fff', borderBottom: '1px solid var(--color-border)', padding: '0.9rem 0' }}
     >
       <div className="container d-flex justify-content-between align-items-center">
-        <a
+        
           href="#hero"
           className="navbar-brand m-0"
           style={{
             fontFamily: 'var(--font-display)',
-            color: '#fff',
+            color: 'var(--color-slate-900)',
             fontSize: '1.3rem',
             fontWeight: 600,
           }}
@@ -40,35 +40,19 @@ const Navbar = ({ name }) => {
           aria-label="Toggle navigation"
           style={{ border: 'none' }}
         >
-          <span
-            style={{
-              display: 'block',
-              width: 24,
-              height: 2,
-              backgroundColor: '#fff',
-              marginBottom: 5,
-            }}
-          />
-          <span
-            style={{
-              display: 'block',
-              width: 24,
-              height: 2,
-              backgroundColor: '#fff',
-              marginBottom: 5,
-            }}
-          />
-          <span style={{ display: 'block', width: 24, height: 2, backgroundColor: '#fff' }} />
+          <span style={{ display: 'block', width: 24, height: 2, backgroundColor: 'var(--color-slate-900)', marginBottom: 5 }} />
+          <span style={{ display: 'block', width: 24, height: 2, backgroundColor: 'var(--color-slate-900)', marginBottom: 5 }} />
+          <span style={{ display: 'block', width: 24, height: 2, backgroundColor: 'var(--color-slate-900)' }} />
         </button>
 
         <div className={`${expanded ? 'd-flex' : 'd-none'} d-lg-flex flex-column flex-lg-row`}>
           {NAV_LINKS.map((link) => (
-            <a
+            
               key={link.href}
               href={link.href}
               onClick={() => setExpanded(false)}
               className="mx-lg-3 py-2"
-              style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.92rem', fontWeight: 500 }}
+              style={{ color: 'var(--color-slate-700)', fontSize: '0.92rem', fontWeight: 500 }}
             >
               {link.label}
             </a>
