@@ -17,7 +17,11 @@ const Navbar = ({ name }) => {
   return (
     <nav
       className="navbar navbar-expand-lg fixed-top"
-      style={{ backgroundColor: '#fff', borderBottom: '1px solid var(--color-border)', padding: '0.9rem 0' }}
+      style={{
+        backgroundColor: '#fff',
+        borderBottom: '1px solid var(--color-border)',
+        padding: '0.9rem 0',
+      }}
     >
       <div className="container d-flex justify-content-between align-items-center">
         
@@ -38,7 +42,7 @@ const Navbar = ({ name }) => {
           type="button"
           onClick={() => setExpanded(!expanded)}
           aria-label="Toggle navigation"
-          style={{ border: 'none' }}
+          style={{ border: 'none', background: 'none' }}
         >
           <span style={{ display: 'block', width: 24, height: 2, backgroundColor: 'var(--color-slate-900)', marginBottom: 5 }} />
           <span style={{ display: 'block', width: 24, height: 2, backgroundColor: 'var(--color-slate-900)', marginBottom: 5 }} />
@@ -52,7 +56,11 @@ const Navbar = ({ name }) => {
               href={link.href}
               onClick={() => setExpanded(false)}
               className="mx-lg-3 py-2"
-              style={{ color: 'var(--color-slate-700)', fontSize: '0.92rem', fontWeight: 500 }}
+              style={{
+                color: 'var(--color-slate-700)',
+                fontSize: '0.92rem',
+                fontWeight: 500,
+              }}
             >
               {link.label}
             </a>
