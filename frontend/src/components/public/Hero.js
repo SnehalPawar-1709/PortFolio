@@ -7,26 +7,22 @@ const Hero = ({ profile, loading }) => {
     <section
       id="hero"
       style={{
-        backgroundColor: 'var(--color-slate-900)',
+        backgroundColor: 'var(--color-bg)',
         paddingTop: '9rem',
         paddingBottom: '6rem',
         minHeight: '70vh',
         display: 'flex',
         alignItems: 'center',
+        borderBottom: '1px solid var(--color-border)',
       }}
     >
       <div className="container">
         {loading ? (
-          <p style={{ color: 'rgba(255,255,255,0.6)' }}>Loading...</p>
+          <p style={{ color: 'var(--color-slate-500)' }}>Loading...</p>
         ) : !hasContent ? (
-          <div style={{ color: 'rgba(255,255,255,0.55)' }}>
-            <span
-              className="section-label"
-              style={{ color: 'var(--color-amber)' }}
-            >
-              Hero Section
-            </span>
-            <p className="empty-state" style={{ color: 'rgba(255,255,255,0.5)', textAlign: 'left', padding: 0 }}>
+          <div>
+            <span className="section-label">Hero Section</span>
+            <p className="empty-state" style={{ textAlign: 'left', padding: 0 }}>
               No profile information has been added yet. Add your name, designation, and a short
               introduction from the admin panel to populate this section.
             </p>
@@ -36,7 +32,7 @@ const Hero = ({ profile, loading }) => {
             <span className="section-label">Welcome</span>
             <h1
               style={{
-                color: '#fff',
+                color: 'var(--color-slate-900)',
                 fontSize: 'clamp(2.4rem, 5vw, 3.6rem)',
                 lineHeight: 1.15,
                 marginBottom: '0.8rem',
@@ -49,7 +45,7 @@ const Hero = ({ profile, loading }) => {
                 style={{
                   color: 'var(--color-amber)',
                   fontSize: '1.4rem',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   fontFamily: 'var(--font-body)',
                   marginBottom: '1.4rem',
                 }}
@@ -60,7 +56,7 @@ const Hero = ({ profile, loading }) => {
             {profile.shortIntro && (
               <p
                 style={{
-                  color: 'rgba(255,255,255,0.78)',
+                  color: 'var(--color-slate-700)',
                   fontSize: '1.08rem',
                   lineHeight: 1.7,
                   marginBottom: '2rem',
@@ -71,7 +67,7 @@ const Hero = ({ profile, loading }) => {
             )}
             <div className="d-flex gap-3 flex-wrap">
               {profile.resumeLink && (
-                <a
+                
                   href={profile.resumeLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -80,7 +76,11 @@ const Hero = ({ profile, loading }) => {
                   View Resume
                 </a>
               )}
-              <a href="#contact" className="btn-outline-slate" style={{ borderColor: 'rgba(255,255,255,0.4)', color: '#fff' }}>
+              
+                href="#contact"
+                className="btn-outline-slate"
+                style={{ borderColor: 'var(--color-slate-900)', color: 'var(--color-slate-900)' }}
+              >
                 Get in Touch
               </a>
             </div>
