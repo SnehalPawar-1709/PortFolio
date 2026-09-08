@@ -1,13 +1,13 @@
 :root {
-  --color-bg: #F9F7FF;
+  --color-bg: #F0F4F8;
   --color-surface: #FFFFFF;
-  --color-slate-900: #2D1B69;
-  --color-slate-700: #4C3B8A;
-  --color-slate-500: #6B5EA8;
-  --color-amber: #7C3AED;
-  --color-amber-dark: #5B21B6;
-  --color-amber-light: #EDE9FE;
-  --color-border: #DDD5F5;
+  --color-slate-900: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-500: #64748B;
+  --color-amber: #0284C7;
+  --color-amber-dark: #0369A1;
+  --color-amber-light: #E0F2FE;
+  --color-border: #BAE6FD;
   --color-success: #2E7D5B;
   --color-danger: #B0413E;
 
@@ -16,8 +16,8 @@
 
   --radius-sm: 4px;
   --radius-md: 8px;
-  --shadow-card: 0 1px 3px rgba(45, 27, 105, 0.06), 0 1px 2px rgba(45, 27, 105, 0.04);
-  --shadow-elevated: 0 4px 16px rgba(45, 27, 105, 0.12);
+  --shadow-card: 0 1px 3px rgba(30, 41, 59, 0.06), 0 1px 2px rgba(30, 41, 59, 0.04);
+  --shadow-elevated: 0 4px 16px rgba(30, 41, 59, 0.12);
 }
 
 * {
@@ -28,7 +28,7 @@ body {
   margin: 0;
   font-family: var(--font-body);
   background-color: var(--color-bg);
-  color: var(--color-slate-900);
+  color: var(--color-slate-700);
   -webkit-font-smoothing: antialiased;
 }
 
