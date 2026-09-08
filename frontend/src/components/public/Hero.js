@@ -39,7 +39,6 @@ const Hero = ({ profile, loading }) => {
             >
               {profile.name}
             </h1>
-
             {profile.designation && (
               <h2
                 style={{
@@ -53,7 +52,6 @@ const Hero = ({ profile, loading }) => {
                 {profile.designation}
               </h2>
             )}
-
             {profile.shortIntro && (
               <p
                 style={{
@@ -66,7 +64,6 @@ const Hero = ({ profile, loading }) => {
                 {profile.shortIntro}
               </p>
             )}
-
             <div className="d-flex gap-3 flex-wrap">
               {profile.resumeLink && (
                 
