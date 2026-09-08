@@ -39,6 +39,7 @@ const Hero = ({ profile, loading }) => {
             >
               {profile.name}
             </h1>
+
             {profile.designation && (
               <h2
                 style={{
@@ -52,6 +53,7 @@ const Hero = ({ profile, loading }) => {
                 {profile.designation}
               </h2>
             )}
+
             {profile.shortIntro && (
               <p
                 style={{
@@ -64,28 +66,29 @@ const Hero = ({ profile, loading }) => {
                 {profile.shortIntro}
               </p>
             )}
-          <div className="d-flex gap-3 flex-wrap">
-  {profile.resumeLink && (
-    
-      href={profile.resumeLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn-amber"
-    >
-      View Resume
-    </a>
-  )}
-  
-    href="#contact"
-    className="btn-outline-slate"
-    style={{
-      borderColor: 'var(--color-slate-900)',
-      color: 'var(--color-slate-900)',
-    }}
-  >
-    Get in Touch
-  </a>
-</div>
+
+            <div className="d-flex gap-3 flex-wrap">
+              {profile.resumeLink && (
+                
+                  href={profile.resumeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-amber"
+                >
+                  View Resume
+                </a>
+              )}
+              
+                href="#contact"
+                className="btn-outline-slate"
+                style={{
+                  borderColor: 'var(--color-slate-900)',
+                  color: 'var(--color-slate-900)',
+                }}
+              >
+                Get in Touch
+              </a>
+            </div>
           </div>
         )}
       </div>
