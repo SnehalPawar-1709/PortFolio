@@ -23,8 +23,7 @@ const Hero = ({ profile, loading }) => {
           <div>
             <span className="section-label">Hero Section</span>
             <p className="empty-state" style={{ textAlign: 'left', padding: 0 }}>
-              No profile information has been added yet. Add your name, designation, and a short
-              introduction from the admin panel to populate this section.
+              No profile information has been added yet.
             </p>
           </div>
         ) : (
@@ -79,7 +78,10 @@ const Hero = ({ profile, loading }) => {
               
                 href="#contact"
                 className="btn-outline-slate"
-                style={{ borderColor: 'var(--color-slate-900)', color: 'var(--color-slate-900)' }}
+                style={{
+                  borderColor: 'var(--color-slate-900)',
+                  color: 'var(--color-slate-900)',
+                }}
               >
                 Get in Touch
               </a>
