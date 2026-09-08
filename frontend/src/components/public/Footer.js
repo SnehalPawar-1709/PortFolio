@@ -7,17 +7,17 @@ const Footer = ({ name }) => {
 
   return (
     <footer
-      style={{ backgroundColor: 'var(--color-slate-900)', padding: '2rem 0', textAlign: 'center' }}
+      style={{
+        backgroundColor: 'var(--color-bg)',
+        borderTop: '1px solid var(--color-border)',
+        padding: '2rem 0',
+        textAlign: 'center',
+      }}
     >
-      {/* 
-        Hidden admin access point #2: click this copyright line 5 times
-        within 2 seconds to be taken to the admin login. There is no visual
-        indication that this is interactive - it looks like plain footer text.
-      */}
       <p
         onClick={handleSecretMultiClick}
         style={{
-          color: 'rgba(255,255,255,0.45)',
+          color: 'var(--color-slate-500)',
           fontSize: '0.85rem',
           margin: 0,
           userSelect: 'none',
