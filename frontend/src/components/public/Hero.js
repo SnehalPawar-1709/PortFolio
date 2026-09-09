@@ -66,7 +66,7 @@ const Hero = ({ profile, loading }) => {
             )}
             <div className="d-flex gap-3 flex-wrap">
               {profile.resumeLink && (
-                
+                <a
                   href={profile.resumeLink}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -75,7 +75,7 @@ const Hero = ({ profile, loading }) => {
                   View Resume
                 </a>
               )}
-              
+              <a
                 href="#contact"
                 className="btn-outline-slate"
                 style={{
