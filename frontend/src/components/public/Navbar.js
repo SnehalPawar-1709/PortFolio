@@ -24,7 +24,7 @@ const Navbar = ({ name }) => {
       }}
     >
       <div className="container d-flex justify-content-between align-items-center">
-        
+        <a
           href="#hero"
           className="navbar-brand m-0"
           style={{
@@ -51,7 +51,7 @@ const Navbar = ({ name }) => {
 
         <div className={`${expanded ? 'd-flex' : 'd-none'} d-lg-flex flex-column flex-lg-row`}>
           {NAV_LINKS.map((link) => (
-            
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setExpanded(false)}
